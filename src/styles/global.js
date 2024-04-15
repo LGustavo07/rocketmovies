@@ -1,35 +1,33 @@
 import { createGlobalStyle } from "styled-components";
 
 export default createGlobalStyle`
- * {
-    margin: 0 ;
-    padding: 0;
-    box-sizing:border-box;
-    -webkit-font-smoothing: antialiased;
- }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
- body {
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_1000};
-    color: ${({ theme }) => theme.COLORS.WHITE};
- }
+    :root {
+        font-size: 62.5%;
+    }
 
- body, input, button, textarea {
-    font-family: "Roboto Slab", serif;
-    font-size: 16px;
-    outline: none;
+    body {
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        font-size: 1.6rem;
+        font-family: "Roboto Slab", serif;
+    }
 
- }
+    a {
+        text-decoration: none;
+    }
 
- a { 
-    text-decoration: none;
- }
+    button, a {
+        cursor: pointer;
+        transition: filter 0.2s;
+    }
 
- button, a {
-    cursor: pointer;
-    transition: filter 0.2s;
- }
-
- button:hover, a:hover {
-   filter: brightness(0.9s);
- }
-`;
+    button:hover, a:hover {
+        filter: brightness(0.9);
+    }
+`
