@@ -1,62 +1,86 @@
 import styled from "styled-components";
 
+
 export const Container = styled.div`
-
     width: 100%;
+    height: 100vh;
+    background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-    > header {
-        padding: 0 14.4rem;
+    >header {
         width: 100%;
-        height: 14.4rem;
-        background-color: ${({ theme }) => theme.COLORS.BG_PROFILE};
+        height: 7rem;
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
         display: flex;
         align-items: center;
+
+        padding: 0 124px;
+
+        svg{
+            color: ${({ theme }) => theme.COLORS.PINK};
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        svg:hover{
+            color: ${({ theme }) => theme.COLORS.PINK};
+            transition: 1s;
+        }
     }
 `
 
 export const Form = styled.form`
-    max-width: 34.0rem;
-    margin: -8.4rem auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    max-width: 340px;
+    margin: 30px auto 0;
 
-    >div:nth-child(4) {
-        margin-top: 2.4rem;
+    >div:nth-child(4){
+        margin-top: 24px ;
     }
-
-    >div:nth-child(5) {
-        margin-bottom: 2.4rem;
-    }
-    `
+`
 
 export const Avatar = styled.div`
     position: relative;
-    margin: -8.4rem auto 6.4rem;
-    width: 18.6rem;
-    height: 18.6rem;
+    margin: -100px auto 32px;
 
-    img {
-        width: 18.6rem;
-        border-radius: 50%;
-    }
-
-    label {
-        width: 4.8rem;
-
-        background-color: ${({ theme }) => theme.COLORS.PINK};
-        padding: 1.4rem;
-        border-radius: 50%;
-        cursor: pointer;
-        
-        position: absolute;
-        bottom: .7rem;
-        right: .7rem;
-    }
+    width: 186px;
+    height: 186px;
     
+    > img {
+        width: 186px;
+        height: 186px;
+        border-radius: 50%;
+    }
+
+    > label {
+        width: 48px;
+        height: 48px;
+
+        border-radius: 50%;
+        background-color: ${({ theme }) => theme.COLORS.PINK};
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        bottom: 7px;
+        right: 7px;
+
+        cursor: pointer;
+    }
+
     input {
         display: none;
     }
-    
+
     svg {
-        width: 2.0rem;
-        color: ${({ theme }) => theme.COLORS.DARK};
+        width: 20px;
+        height: 20px;
+        color: ${({ theme }) => theme.COLORS.WHITE};
     }
 `

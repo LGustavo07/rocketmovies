@@ -1,13 +1,19 @@
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { SignIn } from '../pages/signin'
-import { SignUp } from '../pages/signup'
+import {SignIn} from '../pages/SignIn'
+import {SignUp} from '../pages/SignUp'
 
-export function AuthRoutes() {
+
+export function AuthRoutes(){
+    const user = localStorage.getItem("@rocketmovies:user")
+
     return(
         <Routes>
-            <Route path="/rocketmovies/" element={<SignIn />} />
-            <Route path="/rocketmovies/signup" element={<SignUp />} />
+            <Route path="/" element={<SignIn></SignIn>}></Route>
+            <Route path="/register" element={<SignUp></SignUp>}></Route>
+
+            { !user && <Route path="*" element={<Navigate to="/"></Navigate>} ></Route> } 
+        
         </Routes>
     )
 }

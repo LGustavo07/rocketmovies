@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     * {
@@ -7,27 +7,55 @@ export default createGlobalStyle`
         box-sizing: border-box;
     }
 
-    :root {
-        font-size: 62.5%;
+    body{
+        background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_1};;
+        color:  ${({ theme }) => theme.COLORS.WHITE};
+        
+        -webkit-font-smoothing: antialiased;
     }
 
     body {
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
-        color: ${({ theme }) => theme.COLORS.WHITE};
-        font-size: 1.6rem;
-        font-family: "Roboto Slab", serif;
+        font-family: 'Protest Riot', 'Roboto', sans-serif;
+        font-size: 16px;
+        outline: none;
     }
 
-    a {
+    input, button, textarea {
+        font-family:  'Roboto', sans-serif;
+        font-size: 16px;
+        outline: none;
+    }
+
+    h1 {
+        font-family: 'Protest Riot';
+    }
+
+    h2, h3 {
+        font-family: "Madimi One", sans-serif;
+    }
+
+    a, p {
         text-decoration: none;
+        font-family: "Madimi One", sans-serif;
     }
 
     button, a {
         cursor: pointer;
-        transition: filter 0.2s;
+        transition:  filter 0.2s;
     }
 
     button:hover, a:hover {
-        filter: brightness(0.9);
+        filter: brightness(0.9)
     }
+
+    ::-webkit-scrollbar {
+        width: .5rem;
+        height: .5rem;
+    }
+
+    ::-webkit-scrollbar-track{
+        background-color: ${({ theme }) => theme.COLORS.PINK};
+        border-radius: 10px;
+        margin-left: 2rem;
+    }  
 `

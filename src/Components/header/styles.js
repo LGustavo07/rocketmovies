@@ -1,48 +1,89 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom"
 
 export const Container = styled.header`
     grid-area: header;
+    height: 7rem;
     width: 100%;
-    height: 11.6rem;
-    padding: 2.4rem 12.3rem;
 
-    border-bottom: 0.1rem solid ${({ theme }) => theme.COLORS.BORDER_BOTTOM};
-    margin-bottom: 4.5rem;
-`;
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
 
-export const Profile = styled.div`
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 6.4rem;
+    gap: 2rem;
+    padding: 0 10rem;
+
 
     > h1 {
-        font-size: 2.4rem;
-        color: ${({ theme }) => theme.COLORS.PINK};
+        width: 100%;
+        color:  ${({ theme }) => theme.COLORS.PINK};
+        cursor: pointer;
+        letter-spacing: 1.6px;
     }
+    
+
+`
+
+export const Search = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 300%;
+    padding: 1rem;
+    background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    color: ${({ theme }) => theme.COLORS.WHITE};
+`
+
+
+export const Profile = styled(Link)`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 
     > img {
-        width: 6.4rem;
-        height: 6.4rem;
-        cursor: pointer;
+        width: 3.5rem;
+        height: 3.5rem;
         border-radius: 50%;
     }
 
-    strong {
-        font-size: 1.8rem;
-        white-space: nowrap;
-        color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-
-    span {
-        color: ${({ theme }) => theme.COLORS.PLACEHOLDER};
-        font-size: 1.4rem;
-    }
-
-    .profile {
+    > div {
         display: flex;
         flex-direction: column;
-        text-align: right;
-        margin-right: -5rem;
-        line-height: 2.4rem;
+        margin-left: 1rem;
+        line-height: 1.5rem;
+    
+        span {
+            font-size: 0.875rem;
+            color: ${({ theme }) => theme.COLORS.PINK};
+        }
+
+        strong {
+            font-size: 1.5em;
+            font-weight: normal;
+            color: ${({ theme }) => theme.COLORS.WHITE};
+        }
     }
-`;
+`
+
+export const Logout = styled.button`
+    border: none;
+    background: none;
+
+    >svg {
+        color: ${({ theme }) => theme.COLORS.PINK};
+        font-size: 2.25rem;
+    }   
+
+    >svg:hover {
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
+        transition: 1s;
+    }
+
+`

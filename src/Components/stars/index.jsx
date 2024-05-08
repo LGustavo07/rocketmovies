@@ -1,14 +1,16 @@
-import { Container } from "./styles";
-import { IoStarSharp, IoStarOutline } from 'react-icons/io5'
+import { VscStarFull, VscStarEmpty } from "react-icons/vsc";
+import { Container } from "./styles.js";
 
-export function Stars() {
-    return(
-        <Container>
-            <IoStarSharp />
-            <IoStarSharp />
-            <IoStarSharp />
-            <IoStarSharp />
-            <IoStarOutline />
-        </Container>
-    )
+export function Stars({ rating, isbigsize }) {
+  let stars = [];
+
+  for (let i = 1; i <= 5; i++) {
+    if (i <= rating) {
+      stars.push(<VscStarFull key={i} />);
+    } else {
+      stars.push(<VscStarEmpty key={i} />);
+    }
+  }
+
+  return <Container isBigSize={isbigsize}>{stars}</Container>;
 }

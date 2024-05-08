@@ -2,31 +2,36 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 5.6rem;
-    background-color: ${({ theme }) => theme.COLORS.BG_INPUT};
-
     display: flex;
-    align-items: center;
-    padding: 1.9rem 1.2rem;
-    margin-bottom: .8rem;
+    align-items:center;
+    justify-content: center;
+    
+    margin-bottom: .3rem;
+    
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
 
-    border-radius: 1.0rem;
+    border-radius: 1rem;
 
     > input {
         width: 100%;
-        padding: 1.9rem 2.4rem;
-        background-color: transparent;
-        color: ${({ theme }) => theme.COLORS.WHITE};
-        border: none;
-        outline: none;
+        height: 3rem;
 
-        &placeholder {
-            color: ${({ theme }) => theme.COLORS.PLACEHOLDER};
-            font-size: 1.4rem;
+        padding: 1rem;
+
+        color: ${({ theme }) => theme.COLORS.WHITE};
+        background: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+
+        border: 0;
+        border-radius: 1rem;
+        font-family: 'Roboto';
+
+        &::placeholder {
+            color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
         }
     }
 
-    svg {
-        color: ${({ theme }) => theme.COLORS.PLACEHOLDER};
-    }
+    > svg {
+            margin-left: 1.6rem;
+        }
 `

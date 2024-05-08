@@ -1,17 +1,21 @@
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route, Navigate } from 'react-router-dom'
 
-import { Home } from '../pages/home'
-import { New } from '../pages/new'
-import { Preview } from '../pages/preview'
-import { Profile } from '../pages/profile'
+import { MovieDetails } from '../pages/MovieDetails'
+import { CreateMovie } from '../pages/CreateMovie'
+import { Profile } from '../pages/Profile'
+import { Home } from '../pages/Home'
 
-export function AppRoutes() {
+export function AppRoutes(){
+    const user = localStorage.getItem("@rocketmovies:user")
+    
     return(
         <Routes>
-            <Route path="/rocketmovies/" element={<Home />} />
-            <Route path="/rocketmovies/new" element={<New />} />
-            <Route path="/rocketmovies/preview" element={<Preview />} />
-            <Route path="/rocketmovies/profile" element={<Profile />} />
+            <Route path="/" element={<Home></Home>}></Route>
+            <Route path="/profile" element={<Profile></Profile>}></Route>
+            <Route path="/newmovie" element={<CreateMovie></CreateMovie>}></Route>
+            <Route path="/moviedetails/:id" element={<MovieDetails></MovieDetails>}></Route>
+
+            { !user && <Route path="*" element={<Navigate to="/"></Navigate>} ></Route> } 
         </Routes>
     )
 }

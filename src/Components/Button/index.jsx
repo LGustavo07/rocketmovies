@@ -1,14 +1,14 @@
-import { Container } from "./styles";
+import { Container } from "./styles.js";
 
-export function Button({title, icon: Icon, loading = false, ...rest}) {
-    return(
-    <Container {...rest}>
-        <button 
-        type="button"
-        disabled={loading}>
-            {Icon && <Icon size="18" />}
-            { loading ? 'Carregando...' : title }
-        </button>
-    </Container>
+export function Button( { title, loading = false, ...rest} ) {
+    return (
+        <Container 
+            type="button" 
+            disabled={loading}
+            {...rest}
+            >
+                
+                { loading ? 'Carregando...' : title }
+        </Container>
     )
 }

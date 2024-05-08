@@ -1,28 +1,69 @@
-import { Container, Content } from "./styles";
-import { FiPlus } from "react-icons/fi";
-import { Header } from "../../components/header";
-import { Section } from "../../components/section";
-import { Button } from "../../components/button";
-import { CardMovie } from "../../components/card";
+import { FiPlus, FiSearch } from 'react-icons/fi'
+import { Container, NewMovie } from './styles.js'
+import { Header } from '../../components/Header'
+import { useNavigate } from 'react-router-dom'
+import { Input } from '../../components/Input'
+import { Movie } from '../../components/Movie'
+import { api } from '../../service/api.js'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
-export function Home() {
-    return (
+export function Home(){
+    const [ notes, setNotes ] = useState([]) 
+    const [ search, setSearch ] = useState("")
+
+    const navigate = useNavigate()
+
+    function handleDetails(id) {
+        navigate(`/moviedetails/${id}`);
+      }
+ 
+    useEffect(() => {
+        async function searchNotes(){
+            const response = await api.get(`/notes?movie_title=${search}`)
+            setNotes(response.data)
+
+        }
+
+        searchNotes()
+
+    }, [ search ])
+
+
+    return(
         <Container>
-            <Header />
+            
+            <Header>
+                <Input 
+                placeholder="Pesquisar pelo título" 
+                icon={ FiSearch }
+                onChange= { (e) => setSearch(e.target.value) }
+                > 
+                </Input>
+            </Header>
 
-            <Content>
-                <div className="header">
-                    <Section title="Meus Filmes" />
+            <main>
+            <header>
+                <h1>Meus Filmes</h1>
 
-                    <Button
-                        to="/rocketmovies/new"
-                        icon={FiPlus}
-                        title="Adicionar filmes"
-                    />
-                </div>
+            <NewMovie to="/newmovie">
+                   <FiPlus></FiPlus>
+                   Adicionar Filme
+            </NewMovie>
+            </header>
 
-                <CardMovie />
-            </Content>
+            {   
+                notes.map((note) =>
+                    <Movie
+                        data={note}
+                        key={String(note.id)}
+                        description={note.description}
+                        onClick={()=> handleDetails(note.id)}/>
+
+                )
+            }
+
+            </main>
         </Container>
-    );
+    )
 }

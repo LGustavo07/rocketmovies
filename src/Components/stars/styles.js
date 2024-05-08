@@ -1,9 +1,14 @@
 import styled from "styled-components";
 
+
+
 export const Container = styled.div`
-    svg {
-        color: ${({ theme }) => theme.COLORS.PINK};
-        margin: 0 .6rem 1.5rem 0;
-        margin-top:1.7rem;
-    }
-`
+  display: flex;
+  gap: ${({ isbigSize }) => (isbigSize ? "1rem" : "0.6rem")};
+  cursor: pointer;
+
+  svg {
+    font-size: ${({ isbigSize }) => (isbigSize ? "2rem" : "1.8rem")};
+    color: ${({ theme }) => theme.COLORS.PINK};
+  }
+`;
