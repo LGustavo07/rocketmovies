@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom"
-
+import { Link } from "react-router-dom";
 
 export const Container = styled(Link)`
     display: flex;
@@ -10,7 +9,7 @@ export const Container = styled(Link)`
 
     color: ${({ theme }) => theme.COLORS.PINK};
     background: transparent;
-    
+
     font-size: 16px;
     border: none;
     text-decoration: none;
@@ -20,4 +19,4 @@ export const Container = styled(Link)`
         font-size: 1.2rem;
         margin: 3rem 0;
     }
-`
+`;

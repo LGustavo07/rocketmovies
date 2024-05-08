@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100%;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
-    
-    margin-bottom: .3rem;
-    
+
+    margin-bottom: 0.3rem;
+
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
     color: ${({ theme }) => theme.COLORS.GRAY_300};
 
@@ -24,7 +24,7 @@ export const Container = styled.div`
 
         border: 0;
         border-radius: 1rem;
-        font-family: 'Roboto';
+        font-family: "Roboto";
 
         &::placeholder {
             color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
@@ -32,6 +32,6 @@ export const Container = styled.div`
     }
 
     > svg {
-            margin-left: 1.6rem;
-        }
-`
+        margin-left: 1.6rem;
+    }
+`;

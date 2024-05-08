@@ -22,4 +22,4 @@ export const Container = styled.button`
         opacity: 0.5;
         transition: 1s;
     }
-`
+`;

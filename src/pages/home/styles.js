@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import { Link } from "react-router-dom"
+import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
     width: 100%;
@@ -23,7 +23,7 @@ export const Container = styled.div`
             justify-content: space-between;
             margin: 2rem 0;
         }
-        
+
         h1 {
             font-size: 2.5rem;
             margin-top: 1rem;
@@ -32,16 +32,15 @@ export const Container = styled.div`
     }
 
     ::-webkit-scrollbar {
-        width: .5rem;
+        width: 0.5rem;
     }
 
-    ::-webkit-scrollbar-track{
+    ::-webkit-scrollbar-track {
         background-color: ${({ theme }) => theme.COLORS.PINK};
         border-radius: 10px;
-        margin-left: .5rem;
-    }  
-
-`
+        margin-left: 0.5rem;
+    }
+`;
 
 export const NewMovie = styled(Link)`
     display: flex;
@@ -55,17 +54,16 @@ export const NewMovie = styled(Link)`
 
     padding: 0 16px;
     margin-top: 16px;
-    
+
     border: 0;
     border-radius: 10px;
 
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-weight: bold;
     cursor: pointer;
 
-    > svg{
+    > svg {
         color: ${({ theme }) => theme.COLORS.WHITE};
         font-size: 1.2rem;
     }
-    
-`
+`;

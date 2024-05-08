@@ -1,41 +1,26 @@
-import { Container } from './styles.js'
-import { Stars } from '../Stars'
-import { Tags } from '../Tags'
+import { Container } from "./styles.js";
+import { Stars } from "../Stars";
+import { Tags } from "../Tags";
 
-export function Movie({ data, ...rest}){
+export function Movie({ data, ...rest }) {
     // console.log(data)
-    return(
+    return (
         <Container {...rest}>
             <div>
+                <h1>{data.movie_title}</h1>
 
-            <h1>{data.movie_title}</h1>
-            
-            <Stars
-            rating= { data.rating }
-            isbigsize={true}
-            ></Stars>
+                <Stars rating={data.rating} isbigsize={true}></Stars>
             </div>
 
             <p> {data.movie_description} </p>
 
-
-            {
-                data.tags && (
+            {data.tags && (
                 <footer>
-                
-                {
-                    data.tags.map((tag)=> (
-                    <Tags
-                    key= { tag.id }
-                    title= { tag.tag_name }/>
-                ))
-                }
-                
-                </footer>   
-                )
-                
-            }
-            
+                    {data.tags.map((tag) => (
+                        <Tags key={tag.id} title={tag.tag_name} />
+                    ))}
+                </footer>
+            )}
         </Container>
-    )
+    );
 }

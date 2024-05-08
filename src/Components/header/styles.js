@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 export const Container = styled.header`
     grid-area: header;
@@ -7,7 +7,7 @@ export const Container = styled.header`
     width: 100%;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
-    
+
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
@@ -18,16 +18,13 @@ export const Container = styled.header`
     gap: 2rem;
     padding: 0 10rem;
 
-
     > h1 {
         width: 100%;
-        color:  ${({ theme }) => theme.COLORS.PINK};
+        color: ${({ theme }) => theme.COLORS.PINK};
         cursor: pointer;
         letter-spacing: 1.6px;
     }
-    
-
-`
+`;
 
 export const Search = styled.div`
     display: flex;
@@ -36,10 +33,9 @@ export const Search = styled.div`
 
     width: 300%;
     padding: 1rem;
-    background-color:  ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
     color: ${({ theme }) => theme.COLORS.WHITE};
-`
-
+`;
 
 export const Profile = styled(Link)`
     display: flex;
@@ -58,7 +54,7 @@ export const Profile = styled(Link)`
         flex-direction: column;
         margin-left: 1rem;
         line-height: 1.5rem;
-    
+
         span {
             font-size: 0.875rem;
             color: ${({ theme }) => theme.COLORS.PINK};
@@ -70,20 +66,19 @@ export const Profile = styled(Link)`
             color: ${({ theme }) => theme.COLORS.WHITE};
         }
     }
-`
+`;
 
 export const Logout = styled.button`
     border: none;
     background: none;
 
-    >svg {
+    > svg {
         color: ${({ theme }) => theme.COLORS.PINK};
         font-size: 2.25rem;
-    }   
+    }
 
-    >svg:hover {
+    > svg:hover {
         color: ${({ theme }) => theme.COLORS.GRAY_100};
         transition: 1s;
     }
-
-`
+`;

@@ -10,7 +10,7 @@ export const Container = styled.textarea`
     border: none;
     resize: none;
 
-    font-family: 'Roboto';
+    font-family: "Roboto";
 
     margin-bottom: 8px;
     border-radius: 10px;
@@ -19,4 +19,4 @@ export const Container = styled.textarea`
     &::placeholder {
         color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
-`
+`;
